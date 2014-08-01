@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import chardet
 import sitecustomize 
 
-print '''@author: cs1104 zcj =。='''
+print '''@author: cs1104 zcj ^_^'''
 print '''@version:ver1.0'''
 print '''-----------input----------------'''
 passwd = "***"

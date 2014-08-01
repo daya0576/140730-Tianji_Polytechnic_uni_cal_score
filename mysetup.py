@@ -10,7 +10,8 @@ options = {"py2exe":
             {   "compressed": 1,
                 "optimize": 2,
                 "includes": includes,
-                "bundle_files": 1
+                "bundle_files": 1,
+                 "dll_excludes": ["MSVCP90.dll"] 
             }
           }
 
