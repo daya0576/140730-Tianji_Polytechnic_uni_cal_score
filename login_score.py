@@ -2,21 +2,28 @@
 import urllib, urllib2, cookielib, sys, time, os
 from bs4 import BeautifulSoup 
 import chardet
-import sitecustomize 
+import types  
 
 print '''@author: cs1104 zcj ^_^'''
-print '''@version:ver1.0'''
+print '''@version:ver1.1'''
 print '''-----------input----------------'''
 passwd = "***"
 name = "***"
 choise = "***"
-requered_only = True
+requered_only = False
+name = sys.argv[1]
+passwd = sys.argv[2]
+
+'''
 print unicode("学号：","utf8")
 name = raw_input(unicode(" id:","utf8"))
 print unicode("密码：","utf8")
 passwd = raw_input(unicode(" passwd: ","utf8"))
+'''
+
 print unicode(" 只计算必修的课？：","utf8")
 chiose = raw_input(unicode("required classes only?(yes/no):","utf8"))
+
 
 if "y" in chiose:
     requered_only = True
@@ -100,6 +107,10 @@ def get_context(table_score_all):
         subjects = term[1]
         for subject in subjects:
             if len(subject) == 7:
+                if "双学位" in subject[2]:
+                    continue
+                if "通过" in subject[6]:
+                    continue
                 if requered_only:
                     if "任选" in subject[5]:
                         continue
@@ -124,9 +135,10 @@ def get_context(table_score_all):
     for (score, weight) in zip(score_term_sum, weight_term_sum):
         score_sum += score
         weight_sum += weight
-        
-    final_average = float(score_sum) / weight_sum
-    text += "\n"+"final_average: " + str(final_average)
+    
+    if score_sum != 0:    
+        final_average = float(score_sum) / weight_sum
+        text += "\n"+"final_average: " + str(final_average)
     
     return text
 
