@@ -21,16 +21,15 @@ print unicode("密码：","utf8")
 passwd = raw_input(unicode(" passwd: ","utf8"))
 '''
 
-print unicode(" 只计算必修的课？：","utf8")
-chiose = raw_input(unicode("required classes only?(yes/no):","utf8"))
+#print unicode(" 只计算必修的课？：","utf8")
+#chiose = raw_input(unicode("required classes only?(yes/no):","utf8"))
+# if "y" in chiose:
+#     requered_only = True
+# elif "n" in chiose:
+#     requered_only = False
+# else:
+#     print "。。。yes or no, this is a question "
 
-
-if "y" in chiose:
-    requered_only = True
-elif "n" in chiose:
-    requered_only = False
-else:
-    print "。。。yes or no, this is a question "
 
 print '''--------------------------------'''
 
@@ -124,6 +123,7 @@ def get_context(table_score_all):
             else:
                 pass
             #print "\n"
+            
         if weight_term_sum[term_num] != 0:
             text += "score_term_average: " + str(float(score_term_sum[term_num]) / weight_term_sum[term_num]) + '\n'
             text += "weight_term_sum: " + str(weight_term_sum[term_num]) + '\n'
