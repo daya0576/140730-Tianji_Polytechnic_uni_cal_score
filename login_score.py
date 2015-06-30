@@ -193,6 +193,9 @@ class Score_info(object):
         
         return scorePage
 
+
+
+
 '''login'''
 daya_score = Score_info(name, passwd)
 daya_score.login()  
