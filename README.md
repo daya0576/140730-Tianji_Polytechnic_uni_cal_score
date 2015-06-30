@@ -6,5 +6,5 @@
 （有bug，不想改了。）
 3.运行成功后，结果保存在当前目录result文件夹下
 
-源代码：https://github.com/daya0576/140730-Tianji_Polytechnic_uni_cal_score
+
 有问题 --> qq:746058508
